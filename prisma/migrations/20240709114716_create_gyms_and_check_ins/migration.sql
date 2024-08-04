@@ -1,20 +1,20 @@
 /*
   Warnings:
 
-  - Added the required column `password_hashs` to the `users` table without a default value. This is not possible if the table is not empty.
+  - Added the required column `password_hash` to the `users` table without a default value. This is not possible if the table is not empty.
 
 */
 -- AlterTable
 ALTER TABLE "users" ADD COLUMN     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-ADD COLUMN     "password_hashs" TEXT NOT NULL;
+ADD COLUMN     "password_hash" TEXT NOT NULL;
 
 -- CreateTable
-CREATE TABLE "check_ins" (
+CREATE TABLE "check_in" (
     "id" TEXT NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "validated_at" TIMESTAMP(3),
 
-    CONSTRAINT "check_ins_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "check_in_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
